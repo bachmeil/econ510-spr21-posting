@@ -1,0 +1,360 @@
+<style>
+body { max-width: 850px; margin: auto; margin-top: 60px; font-family: Roboto, Trebuchet MS, Arial; margin-bottom: 100px; font-size: 1.2em; }
+.hy { background-color: yellow; }
+.hc { background-color: lightcyan; }
+pre { border: 1px solid green; border-radius: 6px; padding: 10px; }
+.hide { display: none; }
+button { font-size: 16px; background-color: inherit; border-radius: 4px; border: 1px solid silver; margin-left: 8px; }
+.flag { color: green; }
+.content { font-size: 1.8em; }
+.table { font-size: 100%; font-family: "Ubuntu Mono", "Source Code Pro", "Courier New"; }
+td, th { padding-right: 32px; text-align: left; }
+.counter { font-size: 100%; color: brown; }
+</style>
+
+<div id="content" class="content">Click a button at the bottom to choose a slide.</div>
+<br><br>
+<span id="counter" class="counter"></span> <span id="subset" class="counter"></span>
+
+<button onclick="showSlide(1); c(1)">1</button>
+<div id="1" style="display: none">
+  <h1>MPC shocks</h1>
+  We've had lots of experience with MPC shocks in the last year.
+</div>
+
+<button onclick="showSlide(2); c(2)">2</button>
+<div id="2" style="display: none">
+  <h1>MPC shocks</h1>
+  Very little of the effect was due to lockdowns - areas without lockdowns had similar losses of business.
+  <br><br>
+  This is not surprising at all.
+  <ul>
+    <li>Anyone in the high risk group needed to avoid other people. There wasn't a lot of motivation to go to the store to buy a new shirt if there was a possibility they'd die.</li>
+    <li>Anyone that interacted with people in the high risk group also cut back on shopping.</li>
+    <li>How did this affect the economy?</li>
+  </ul>
+</div>
+
+<button onclick="showSlide(3); c(3)">3</button>
+<div id="3" style="display: none">
+  Old consumption function:
+  <br><br>
+  C = 4000 + 0.9Y
+  <br><br>
+  New consumption function:
+  <br><br>
+  C = 4000 + 0.85Y
+  <br><br>
+  I = 500
+  <br>
+  G = 1500
+  <br><br>
+  Compute the change in GDP.
+</div>
+
+<button onclick="showSlide(4); c(4)">4</button>
+<div id="4" style="display: none">
+  <h1>Attempt 1</h1>
+  You might be tempted to take the easy approach and use the multiplier. The problem is that <b>the multiplier is changing</b> because the MPC is changing.
+</div>
+
+<button onclick="showSlide(5); c(5)">5</button>
+<div id="5" style="display: none">
+  <h1>Brute force approach</h1>
+  Z = 4000 + 0.9Y + 500 + 1500
+  <br><br>
+  Y = 6000 + 0.9Y
+  <br><br>
+  Y<sub>0</sub><sup>*</sup> = 60,000
+  <br><br>
+  Now compute the new equilibrium GDP:
+  <br><br>
+  Z = 4000 + 0.85Y + 500 + 1500
+  <br><br>
+  Y = 6000 + 0.85Y
+<br><br>
+0.15Y = 6000
+<br><br>
+Y<sub>1</sub><sup>*</sup> = 6000/0.15 = 40,000
+<br><br>
+<b>A relatively minor fall in the MPC due to the virus causes a very large recession!</b>
+</div>
+
+<button onclick="showSlide(6); c(6)">6</button>
+<div id="6" style="display: none">
+  <h1>Why the large drop for such a small change in the MPC?</h1>
+  When the MPC falls, the owner of the BMW dealership might decide against getting the new car. If she does that, Gunther's workers don't have additional income coming in.
+<br><br>
+A fall in the MPC means
+<ul>
+  <li>There's less consumption for a given amount of GDP</li>
+  <li>There are smaller additional increases in demand due to the spending that follows the shock.</li>
+</ul>
+</div>
+
+<script>
+  function c(n, i, j) {
+      i = i || -1;
+      document.getElementById('counter').innerHTML = "Slide " + n;
+      if (i === -1) {
+	  document.getElementById('subset').innerHTML = "";
+      } else {
+	  document.getElementById('subset').innerHTML = "(" + i + "/" + j + ")";
+      }
+  }
+  
+  function txt(slide, text, html) {
+      document.getElementById("slide"+slide+"-text"+text).innerHTML = html;
+  }
+  
+  function hy(slide, text) {
+      document.getElementById("slide"+slide+"-text"+text).classList.add('hy');
+  }
+  
+  function reset(slide, text) {
+      document.getElementById("slide"+slide+"-text"+text).classList = "";
+  }
+  
+  function showSlide(id) {
+      document.getElementById("content").innerHTML = document.getElementById(id).innerHTML;
+  }
+  
+  class Graph {
+      constructor(h, w) {
+	  this.height = h;
+	  this.width = w;
+	  this.xlength = 700;
+	  this.ylength = 600;
+	  this.xoffset = 30;
+	  this.yoffset = 30;
+      }
+      
+      xx0() {
+	  return this.xoffset;
+      }
+      
+      yy0() {
+	  return this.yoffset + this.ylength;
+      }
+      
+      coord(x, y) {
+	  return [this.xx0() + x, this.yy0() - y];
+      }
+      
+      header() {
+	  return '<svg height="' + this.height + '" width="' + this.width + '">';
+      }
+      
+      fullhtml(s) {
+	  return this.header() + "\n" + s + "</svg>";
+      }
+      
+      line(point1, point2, options) {
+	  options = options || {}
+	  var color;
+	  if (options.hasOwnProperty('color')) {
+	      color = options['color'];
+	  } else {
+	      color = "purple";
+	  }
+	  var width;
+	  if (options.hasOwnProperty('width')) {
+	      width = options['width'];
+	  } else {
+	      width = 6;
+	  }
+	  var tmp1 = this.coord(point1[0], point1[1]);
+	  var tmp2 = this.coord(point2[0], point2[1]);
+	  return `<line x1="${tmp1[0]}" y1="${tmp1[1]}" x2="${tmp2[0]}" y2="${tmp2[1]}" style="stroke: ${color}; stroke-width: ${width}" />`;
+      }
+      
+      yaxis() {
+	  return this.line([0, 0], [0, this.ylength]);
+      }
+      
+      xaxis() {
+	  return this.line([-3, 0], [this.xlength, 0]);
+      }
+      
+      axes() {
+	  return this.yaxis() + "\n" + this.xaxis();
+      }
+      
+      point(x, y, options) {
+	  options = options || {}
+	  var color;
+	  if (options.hasOwnProperty('color')) {
+	      color = options['color'];
+	  } else {
+	      color = "black";
+	  }
+	  var tmp = this.coord(x, y);
+	  return `<circle cx="${tmp[0]}" cy="${tmp[1]}" r="4" stroke="${color}" stroke-width="3" fill="${color}" />`;
+      }
+      
+      pointLabelTop(x, y, txt, options) {
+	  options = options || {}
+	  var color;
+	  if (options.hasOwnProperty('color')) {
+	      color = options['color'];
+	  } else {
+	      color = "black";
+	  }
+	  var tmp = this.coord(x-8, y+20);
+	  return `<text x="${tmp[0]}" y="${tmp[1]}" fill="${color}" style="font-family: mono; font-size: 24px;">${txt}</text>`;
+      }
+      
+      insertText(x, y, txt, options) {
+	  options = options || {};
+	  var color;
+	  if (options.hasOwnProperty('color')) {
+	      color = options['color'];
+	  } else {
+	      color = "purple";
+	  }
+	  var tmp = this.coord(x, y);
+	  return `<text x="${tmp[0]}" y="${tmp[1]}" fill="${color}" style="font-family: mono; font-size: 24px;">${txt}</text>`;
+      }
+      
+      blueText(x, y, txt) {
+	  var tmp = this.coord(x, y);
+	  return `<text x="${tmp[0]}" y="${tmp[1]}" fill="blue" style="font-family: mono; font-size: 24px;">${txt}</text>`;
+      }
+      
+      box(x, y, width, options) {
+	  options = options || {};
+	  var color;
+	  if (options.hasOwnProperty('color')) {
+	      color = options['color'];
+	  } else {
+	      color = "black";
+	  }
+	  return this.line([x-width/2, y+width/2], [x+width/2, y+width/2], {'color': color, 'width': 2}) + 
+	      this.line([x+width/2, y+width/2], [x+width/2, y-width/2], {'color': color, 'width': 2}) +
+	      this.line([x-width/2, y-width/2], [x+width/2, y-width/2], {'color': color, 'width': 2}) +
+	      this.line([x-width/2, y-width/2], [x-width/2, y+width/2], {'color': color, 'width': 2});
+      }
+      
+      innerhtml(obj) {
+	  var s = "";
+	  for (let key in obj) {
+	      s += obj[key] + "\n";
+	  }
+	  return this.fullhtml(s);
+      }
+      
+      setinnerhtml(id, obj) {
+	  document.getElementById(id).innerHTML = this.innerhtml(obj);
+      }
+
+      h(id, obj) {
+	  document.getElementById(id).innerHTML = this.innerhtml(obj);
+      }
+  }
+  
+  function goodsMktGraph(g) {
+      var m = {};
+      m["axes"] = g.axes();
+      m["x-label"] = g.insertText(-6, g.ylength+10, "Demand");
+      m["y-label"] = g.insertText(g.xlength+10, 0, "GDP");
+      return m;
+  }
+  
+  function goodsMktTwoPoints(g, m) {
+      m["pta"] = g.point(80,80);
+      m["ptb"] = g.point(500,500);
+      m["a-label"] = g.pointLabelTop(80, 80, "A");
+      m["b-label"] = g.pointLabelTop(500, 500, "B");
+      return m;
+  }
+  
+  function goodsMktLine(g, m) {
+      m["eqline"] = g.line([50, 50], [550, 550]);
+      m["eqlabel"] = g.insertText(560, 550, "GDP = Demand");
+      return m;
+  }
+  
+  function graph() {
+      return new Graph(800, 800);
+  }
+  
+  function pta() {
+      var g = graph();
+      var m = goodsMktGraph(g);
+      m["pta"] = g.point(80,80);
+      m["a-label"] = g.pointLabelTop(80, 80, "A");
+      m["explain"] = g.blueText(50, 200, "GDP and demand are equal at point A");
+      g.h("graph", m);
+  }
+  
+  function ptb() {
+      var g = graph();
+      var m = goodsMktGraph(g);
+      m["ptb"] = g.point(500,500);
+      m["b-label"] = g.pointLabelTop(500, 500, "B");
+      m["explain"] = g.blueText(50, 350, "GDP and demand are also equal at point B");
+      g.h("graph", m);
+  }
+  
+  function twopoints() {
+      var g = graph();
+      var m = goodsMktGraph(g);
+      m = goodsMktTwoPoints(g, m);
+      g.h("graph", m);
+  }
+  
+  function eqline() {
+      var g = graph();
+      var m = goodsMktGraph(g);
+      m = goodsMktTwoPoints(g, m);
+      m = goodsMktLine(g, m);
+      m["explain"] = g.blueText(200, 120, "All possible equilbrium points:");
+      m["explain2"] = g.blueText(200, 95, "Firms produce the amount demanded");
+      m["explain3"] = g.blueText(200, 70, "at every point");
+      g.h("graph", m);
+  }
+  
+  function equilibrium() {
+      var g = graph();
+      g.width = 1000;
+      g.xoffset = 80;
+      var m = goodsMktGraph(g);
+      m["line"] = g.line([0, 100], [650, 200]);
+      m["label1"] = g.insertText(660, 200, "Demand");
+      m["line2"] = g.line([0, 0], [500, 500]);
+      m["label2"] = g.insertText(510, 500, "Demand = GDP");
+      m["explain3"] = g.blueText(200, 70, "Equilibrium is where they meet");
+      g.h("content", m);
+  }
+  
+  /* Highlight the demand curve */
+  function demandline() {
+      var g = graph();
+      g.width = 1000;
+      g.xoffset = 80;
+      var m = goodsMktGraph(g);
+      m["line"] = g.line([0, 100], [650, 200], { 'color': 'blue', 'width': 6 });
+      m["label1"] = g.insertText(660, 200, "Demand", {'color': 'blue'});
+      m["line2"] = g.line([0, 0], [500, 500], { 'color': 'silver', 'width': 4 });
+      m["label2"] = g.insertText(510, 500, "Demand = GDP", { 'color': 'silver' });
+      m["explain3"] = g.blueText(200, 70, "Demand rises with GDP");
+      g.h("content", m);
+  }
+
+  function eq() {
+      var g = graph();
+      g.width = 1000;
+      g.xoffset = 80;
+      var m = goodsMktGraph(g);
+      m["line"] = g.line([0, 100], [650, 200], { 'color': 'black', 'width': 4 });
+      m["label1"] = g.insertText(660, 200, "Demand", {'color': 'black'});
+      m["line2"] = g.line([0, 0], [500, 500], { 'color': 'black', 'width': 4 });
+      m["label2"] = g.insertText(510, 500, "Demand = GDP", { 'color': 'black' });
+      m["explain1"] = g.insertText(200, 70, "The only point where consumers and firms", { 'color': 'black' });
+      m["explain2"] = g.insertText(200, 45, "are both happy with the outcome", { 'color': 'black' });
+      m["eq"] = g.point(118,118, {'color': 'green'});
+      m["eqlabel"] = g.pointLabelTop(118, 118, "E", {'color': 'green'});
+      m["eqbox"] = g.box(118, 128, 70, {'color': 'green'});
+      g.h("content", m);
+  }
+  </script>

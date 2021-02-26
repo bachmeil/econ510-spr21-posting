@@ -1,0 +1,75 @@
+<style>body { max-width: 850px; margin: auto; margin-top: 60px; font-family: Roboto, Trebuchet MS, Arial; margin-bottom: 100px; font-size: 1.2em; }</style>
+<h1>Lifetime Income Problems</h1>
+<div id="question"></div>
+Enter your answer here:<br>
+<textarea id="youranswer" rows="3" cols="60"></textarea><br><br>
+<div id="answer" style="color: red;"></div><br><br>
+<button onclick="question('q1')">View Question 1</button>
+<button onclick="answer('q1')">Question 1 Answer</button><br>
+<button onclick="question('q2')">View Question 2</button>
+<button onclick="answer('q2')">Question 2 Answer</button><br>
+<button onclick="question('q3')">View Question 3</button>
+<button onclick="answer('q3')">Question 3 Answer</button><br>
+<button onclick="question('q4')">View Question 4</button>
+<button onclick="answer('q4')">Question 4 Answer</button><br>
+<button onclick="question('q5')">View Question 5</button>
+<button onclick="answer('q5')">Question 5 Answer</button><br>
+<textarea id="q1" style="display: none;">
+Ted is 55, has an income of $80,000 per year, expects that same income until retirement in ten years, will have a pension of $60,000 per year in retirement, and plans to live until 85. Calculate Ted’s lifetime income.<br><br>
+</textarea>
+<textarea id="q1answer" style="display: none;">
+lifetime income = 10($80,000) + 20($60,000) = $2,000,000
+</textarea>
+<textarea id="q2" style="display: none;">
+Ted is 55, has an income of $80,000 per year, expects that same income until retirement in ten years, will have a pension of $60,000 per year in retirement, and plans to live until 85. Calculate Ted’s spending each year while working an in retirement, assuming Ted prefers consumption smoothing.<br><br>
+</textarea>
+<textarea id="q2answer" style="display: none;">
+Ted lives 30 years, has $2,000,000 in lifetime income, and prefers to consume the same each year:
+<br><br>
+$2,000,000/30 = $66,667/year consumption
+</textarea>
+<textarea id="q3" style="display: none;">
+Ted is 55, has an income of $80,000 per year, expects that same income until retirement in ten years, will have a pension of $60,000 per year in retirement, and plans to live until 85. Calculate Ted’s savings while working and in retirement.<br><br>
+</textarea>
+<textarea id="q3answer" style="display: none;">
+While working, Ted saves
+<br><br>
+$80,000 - $66,667 = $13,333/year
+<br><br>
+While retired, Ted saves
+<br><br>
+$60,000 - $66,667 = -$6667/year
+<br><br>
+Negative savings mean spending out of retirement savings. In this example, Ted is able to do a perfect job of consumption smoothing as long as he lives to be 85. If he lives longer than that, he’ll only be able to consume $60,000 per year. If he lives less than that he won’t care about any of this because he won’t be around anyway.<br><br>
+$2,000,000/30 = $66,667/year consumption
+</textarea>
+<textarea id="q4" style="display: none;">
+Ted is 55, has an income of $80,000 per year, expects that same income until retirement in ten years, will have a pension of $60,000 per year in retirement, and plans to live until 85. Ted is unemployed this year because of the coronavirus. He expects to be out of work for a year and then return to his $80,000 per year salary. Calculate Ted’s lifetime income.<br><br>
+</textarea>
+<textarea id="q4answer" style="display: none;">
+Previously, Ted had $2,000,000 in lifetime income. Now he loses a year of income at $80,000, so his updated lifetime income is
+<br><br>
+$2,000,000 - $80,000 = $1,920,000
+</textarea>
+<textarea id="q5" style="display: none;">
+Ted is 55, has an income of $80,000 per year, expects that same income until retirement in ten years, will have a pension of $60,000 per year in retirement, and plans to live until 85. Ted is unemployed this year because of the coronavirus. He expects to be out of work for a year and then return to his $80,000 per year salary. Calculate Ted’s consumption this year.<br><br>
+</textarea>
+<textarea id="q5answer" style="display: none;">
+His spending per year is
+<br><br>
+$1,920,000/30 = $64,000 per year
+<br><br>
+Ted still lives another 30 years. Because of consumption smoothing, he consumes $64,000 per year for the rest of his life. His consumption doesn’t drop much even though his income this year dropped to $0.</textarea>
+<script>
+function question(id) {
+	document.getElementById('question').innerHTML = document.getElementById(id).innerText;
+}
+
+function answer(id) {
+	if (document.getElementById('youranswer').value.length > 0) {
+		document.getElementById('answer').innerHTML = document.getElementById(id + "answer").innerText;
+	} else {
+		document.getElementById('answer').innerHTML = 'Please input an answer';
+	}
+}
+</script>

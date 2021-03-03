@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-us" xml:lang="en-us">
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<style>body { max-width: 850px; margin: auto; margin-top: 60px; font-family: Roboto, Trebuchet MS, Arial; margin-bottom: 100px; font-size: 1.2em; }
+textarea { font-family: Ubuntu Mono, Source Code Pro, mono; font-size: 1.2em; }
+</style>
+
+<h1>Ricardian Equivalence and Government Spending</h1>
+<p><b>Important Note</b> You will be given a chance to save this page (with your answers and the correct answers) once you've finished. There will be a button that lets you print, which gives you the option to save as a PDF. That will work if you use a standard browser like Firefox or Chrome on a desktop or laptop. There is a good chance it will not work if you're using a mobile device. Please keep that in mind if you want to create a PDF copy.</p>
+<p><b>Overview</b> The goal of this problem set is to demonstrate that Ricardian equivalence, according to which tax cuts and transfers have no effect on GDP, does not imply that government spending has no effect on GDP. There are two important concepts to understand: <i>production shifting</i> and <i>government expenditure shifting</i>.</p>
+<p>There are 1000 identical people in the town of Stubville. They all have an income of $100,000 when young and $100,000 when old. <b>Calculate the consumption of the average person in Stubville when young and old.</b></p>
+Enter your answer and any explanation here:<br>
+<textarea id="youranswer1" rows="3" cols="60"></textarea><br><br>
+<div id="noanswer1" style="display: none;">Please enter your answer<br><br></div>
+<div id="correctanswer1" style="display: none;"><b>Answer:</b> 100,000 + 100,000 = $200,000 lifetime income<br><br>
+They spend $200,000/2 = $100,000 when young and $100,000 when old.
+</div>
+<button onclick="revealAnswer(1)">Reveal The Answer</button>
+<br><br>
+
+<div id="question2" style="display: none;"><b>There is no investment, no government expenditure, and no taxation in Stubville. Calculate total demand in Stubville.</b><br><br>
+	<textarea id="youranswer2" rows="3" cols="60"></textarea>
+<br><br>
+<div id="noanswer2" style="display: none;">Please enter your answer<br><br></div>
+<div id="correctanswer2" style="display: none;"><b>Answer:</b> Z = C + I + G. If I = G = 0, then demand is equal to C. Total consumption in Stubville when young and old is 1000($100,000) = $100,000,000, so that is also total demand in each time period.<br><br></div>
+<button onclick="revealAnswer(2)">Reveal The Answer</button><br><br>
+</div>
+
+<div id="question3" style="display: none;"><b>The residents of Stubville have an exciting offer to sell products to a neighboring town, but in order to do so, they have to build a bridge across the river that costs $1,000,000. The Stubville city government will do that when young and pay for it by taxing every Stubville resident $1000 when young. Compute lifetime after tax income and consumption in each time period for the average resident of Stubville. Then calculate total consumption for Stubville when young and old.</b><br><br>
+<textarea id="youranswer3" rows="3" cols="60"></textarea>
+<br><br>
+<div id="noanswer3" style="display: none;">Please enter your answer<br><br></div>
+<div id="correctanswer3" style="display: none;"><b>Answer:</b> In this case, there is government expenditure when young that causes taxes to rise when young. There is nothing offsetting the higher taxes, so lifetime after tax income falls. <br><br>
+LATI = 100,000 - 1,000 + 100,000 = $199,000
+<br><br>
+Consumption when young and old falls to $99,500. The higher taxes from building the bridge cause consumption to fall, hurting demand. Total consumption is now 1000($99,500) = $99,500,000 or $500,000 less when young and when old.<br><br>
+</div>
+<button onclick="revealAnswer(3)">Reveal The Answer</button><br><br>
+</div>
+	
+<div id="question4" style="display: none;"><b>Continuing on from the previous question, calculate total demand in Stubville when young and old. Does this fiscal policy affect GDP?</b><br><br>
+<textarea id="youranswer4" rows="3" cols="60"></textarea>
+<br><br>
+<div id="noanswer4" style="display: none;">Please enter your answer<br><br></div>
+<div id="correctanswer4" style="display: none;"><b>Answer:</b> Unlike the earlier question, there are now two components of demand: consumption and government spending. We know C is $99,500,000 when young and old. G is $1,000,000 when young and $0 when old. Total demand is $99,500,000 + $1,000,000 = $100,500,000 when young and $99,500,000 + $0 = $99,500,000 when old.<br><br>
+Fiscal policy (the government spending on the bridge) <i>does</i> have an effect on demand and therefore GDP. It increases demand when young and decreases demand by an equivalent amount when old. This is known as <i>production shifting</i>. Some of the production when old has been shifted into the young period due to government spending. The intution behind this is that 100% of the government spending takes place when young, but the residents pay for it by lowering their consumption by the same amount every time period. That means fiscal policy can affect demand.
+<br><br>
+You might wonder how this matters. GDP will be higher when young but lower when old. It would seem that fiscal policy is useless. Recall, however, that the goal of fiscal policy is to increase demand when the economy is in a recession. Government spending can achieve that quite simply if it takes place during a recession. Even though you're not increasing GDP over long periods of time, you're increasing GDP during the time periods it's valuable to raise GDP.
+<br><br>
+</div>
+<button onclick="revealAnswer(4)">Reveal The Answer</button><br><br>
+</div>
+
+<div id="question5" style="display: none;"><b>What happens if Stubville had been planning to build the bridge when old but then moved it to young when the recession hit?</b><br><br>
+<textarea id="youranswer5" rows="3" cols="60"></textarea>
+<br><br>
+<div id="noanswer5" style="display: none;">Please enter your answer<br><br></div>
+<div id="correctanswer5" style="display: none;"><b>Answer:</b> This is sort of a fake question to motivate what I'm about to tell you. If Stubville was planning to build the bridge when old, the residents of Stubville had already reduced their consumption to cover the cost. If they move the building of the bridge to young, demand and GDP rise when young (as before) but there's no change in consumption in either time period as a result of building the bridge earlier. In this sense, you can increase GDP during a recession using government purchases without any negative side effects. Changing the timing of government expenditures to stimulate the economy during a recession is known as <i>government expenditure shifting</i>. A similar thing happens in reverse if you postpone government expenditures when the economy is strong.<br><br></div>
+<button onclick="revealAnswer(5)">Reveal The Answer</button><br><br>
+</div>
+
+<div id="print" style="display: none;"><button id="print" onclick="window.print();">Save This Page As PDF</button><br><br>Clicking that button will bring up the print screen, but you can "print" to a PDF file, which means saving as a PDF on your hard drive.</div>
+
+<script>
+	var questions = 5;
+
+	function revealAnswer(id) {
+		if (document.getElementById('youranswer' + id).value.length > 0) {
+			document.getElementById('noanswer' + id).style = "display: none;";
+			document.getElementById('correctanswer' + id).style = "color: red;";
+			if (id < questions) {
+				document.getElementById('question' + (id+1)).style = "";
+			} else {
+				document.getElementById('print').style = "";
+			}
+		} else {
+			document.getElementById('noanswer' + id).style = "color: red;";
+			document.getElementById('correctanswer' + id).style = "display: none;";
+		}
+	}
+</script>

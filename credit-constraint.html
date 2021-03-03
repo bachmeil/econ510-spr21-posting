@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-us" xml:lang="en-us">
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<style>body { max-width: 850px; margin: auto; margin-top: 60px; font-family: Roboto, Trebuchet MS, Arial; margin-bottom: 100px; font-size: 1.2em; }
+textarea { font-family: Ubuntu Mono, Source Code Pro, mono; font-size: 1.2em; }
+</style>
+
+<h1>Ricardian Equivalence and Credit Constraints</h1>
+<p><b>Important Note</b> You will be given a chance to save this page (with your answers and the correct answers) once you've finished. There will be a button that lets you print, which gives you the option to save as a PDF. That will work if you use a standard browser like Firefox or Chrome on a desktop or laptop. There is a good chance it will not work if you're using a mobile device. Please keep that in mind if you want to create a PDF copy.</p>
+<p>Janice will have $100,000 in income when young and $200,000 when old. (This is a "two period model". It is generally easier to work with two periods of life than individual years.) <b>Calculate Janice's lifetime income.</b></p>
+Enter your answer and any explanation here:<br>
+<textarea id="youranswer1" rows="3" cols="60"></textarea><br><br>
+<div id="noanswer1" style="display: none;">Please enter your answer<br><br></div>
+<div id="correctanswer1" style="display: none;"><b>Answer:</b> 100,000 + 200,000 = $300,000 lifetime income<br><br></div>
+<button onclick="revealAnswer(1)">Reveal The Answer</button>
+<br><br>
+
+<div id="question2" style="display: none;"><b>Now calculate Janice's consumption when young and when old, assuming Janice engages in consumption smoothing and acts according to the permanent income hypothesis.</b><br><br>
+	<textarea id="youranswer2" rows="3" cols="60"></textarea>
+<br><br>
+<div id="noanswer2" style="display: none;">Please enter your answer<br><br></div>
+<div id="correctanswer2" style="display: none;"><b>Answer:</b> We know lifetime income is $300,000. Since she is a consumption smoother, that means she consumes $300,000/2 = $150,000 when young and $300,000/2 = $150,000 when old.<br><br></div>
+<button onclick="revealAnswer(2)">Reveal The Answer</button><br><br>
+</div>
+
+<div id="question3" style="display: none;"><b>The government wants to increase demand due to concerns about a recession. They send everyone a check in the mail for $10,000 when Janice is young. To pay for it, they charge everyone $10,000 in taxes when Janice is old. Calculate Janice's new lifetime after tax income.</b><br><br>
+<textarea id="youranswer3" rows="3" cols="60"></textarea>
+<br><br>
+<div id="noanswer3" style="display: none;">Please enter your answer<br><br></div>
+<div id="correctanswer3" style="display: none;"><b>Answer:</b> Lifetime income has not changed. Income is higher when young but lower when old, due to the higher tax burden needed to pay for the checks sent out when young. Lifetime after tax income is $110,000 + $190,000 = $300,000.<br><br></div>
+<button onclick="revealAnswer(3)">Reveal The Answer</button><br><br>
+</div>
+	
+<div id="question4" style="display: none;"><b>Continuing on from the previous question, calculate Janice's new consumption when young and old. How effective is the government's fiscal policy measure at increasing GDP? Is this what you expected based on our discussion in class? Explain.</b><br><br>
+	<textarea id="youranswer4" rows="3" cols="60"></textarea>
+	<br><br>
+	<div id="noanswer4" style="display: none;">Please enter your answer<br><br></div>
+	<div id="correctanswer4" style="display: none;"><b>Answer:</b> Consumption when young and old remain $300,000/2 = $150,000. GDP is unaffected when Janice is young because demand doesn't change. The fiscal policy of sending checks out to people is completely ineffective. This is precisely the Ricardian equivalence mechanism we discussed in class. Once you account for the GBC and the fact that future taxes are needed to pay for the fiscal policy when Janice is young, lifetime after tax income doesn't change, so consumption, demand, and GDP are all unchanged.<br><br></div>
+	<button onclick="revealAnswer(4)">Reveal The Answer</button><br><br>
+	</div>
+	
+	<div id="question5" style="display: none;"><b>Again continuing on from the previous question, Janice gets good news and bad news at the same time. First, she loses her job, so she'll have an income of $0 when young. She'll still have the same income of $200,000 when old. Second, she is given a trust that will pay her $100,000 when she's old. Calculate her new lifetime after tax income and her consumption when young and old. Then calculate how much she has to borrow when young to support her consumption.</b><br><br>
+		<textarea id="youranswer5" rows="3" cols="60"></textarea>
+		<br><br>
+		<div id="noanswer5" style="display: none;">Please enter your answer<br><br></div>
+		<div id="correctanswer5" style="display: none;"><b>Answer:</b> Her only income when young is the $10,000 check from the government. When old, she has her $200,000 of income from before, she has to pay $10,000 in taxes, and she has $100,000 from the trust. Her lifetime after tax income is 10,000 + 200,000 - 10,000 + 100,000 = $300,000. The loss of her job and the trust offset one another. The <i>timing</i> of Janice's income changes, but not her lifetime after tax income. Therefore, her consumption continues to be $300,000/2 = $150,000 when young and old. Since she has $10,000 of income when young and $150,000 of consumption, she needs to borrow $140,000 when young to maintain her lifestyle.<br><br></div>
+		<button onclick="revealAnswer(5)">Reveal The Answer</button><br><br>
+		</div>
+	
+		<div id="question6" style="display: none;"><b>Again continuing on from the previous question, Janice discovers that since she's unemployed, nobody will lend her money. What is her consumption when young?</b><br><br>
+			<textarea id="youranswer6" rows="3" cols="60"></textarea>
+			<br><br>
+			<div id="noanswer6" style="display: none;">Please enter your answer<br><br></div>
+			<div id="correctanswer6" style="display: none;"><b>Answer:</b> We calculated above that she would consume $150,000 when young. Since she can't borrow, the most she can spend is her full income when she's young. That means her consumption is $10,000. That's as close as she can get to her consumption smoothing choice of consumption.<br><br></div>
+			<button onclick="revealAnswer(6)">Reveal The Answer</button><br><br>
+			</div>
+		
+			<div id="question7" style="display: none;"><b>Due to the severity of the recession, the government sends out an additional check for $20,000 when Janice is young. It will be paid for with $20,000 higher taxes when old. What is her consumption when young, assuming she still faces the credit constraint? What is her MPC out of the government check? Does fiscal policy have an effect on GDP when there's a recession and people face credit constraints?</b><br><br>
+				<textarea id="youranswer7" rows="3" cols="60"></textarea>
+				<br><br>
+				<div id="noanswer7" style="display: none;">Please enter your answer<br><br></div>
+				<div id="correctanswer7" style="display: none;"><b>Answer:</b> As we know, her lifetime after tax income doesn't change because the check when young is offset by higher taxes when old. Her consumption smoothing level of consumption is still $150,000 when young. Her income when young is now $30,000. She consumes $30,000 because that is as close as she can get to her preferred consumption level.<br><br>
+				She has $20,000 in additional income, and her consumption rises by $20,000. Her MPC out of the government check is 1.0. She's spends it all.
+				<br<br>
+				Fiscal policy is extremely effective when it targets unemployed people with credit constraints. They will spend all or most of the check they get. That increases demand and GDP rises during the recession. Tax cuts probably won't be as effective as sending out checks, since somebody that's unemployed probably isn't paying taxes anyway, so the money will go to those that have no liquidity constraints. That is one reason why in 2020 the government sent out checks rather than cutting taxes.
+					<br><br></div>
+				<button onclick="revealAnswer(7)">Reveal The Answer</button><br><br>
+				</div>
+<div id="print" style="display: none;"><button id="print" onclick="window.print();">Save This Page As PDF</button><br><br>Clicking that button will bring up the print screen, but you can "print" to a PDF file, which means saving as a PDF on your hard drive.</div>
+
+<script>
+	var questions = 7;
+
+	function revealAnswer(id) {
+		if (document.getElementById('youranswer' + id).value.length > 0) {
+			document.getElementById('noanswer' + id).style = "display: none;";
+			document.getElementById('correctanswer' + id).style = "color: red;";
+			if (id < questions) {
+				document.getElementById('question' + (id+1)).style = "";
+			} else {
+				document.getElementById('print').style = "";
+			}
+		} else {
+			document.getElementById('noanswer' + id).style = "color: red;";
+			document.getElementById('correctanswer' + id).style = "display: none;";
+		}
+	}
+</script>

@@ -1,0 +1,91 @@
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-us" xml:lang="en-us">
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<title>Basics of the Money Market</title>
+<style>body { max-width: 850px; margin: auto; margin-top: 60px; font-family: Roboto, Trebuchet MS, Arial; margin-bottom: 100px; font-size: 1.2em; }
+textarea { font-family: Ubuntu Mono, Source Code Pro, mono; font-size: 1.2em; }
+</style>
+
+<h1>Basics of the Money Market</h1>
+
+<p><b>Important Note</b> You will be given a chance to save this page (with your answers and the correct answers) once you've finished. There will be a button that lets you print, which gives you the option to save as a PDF. That will work if you use a standard browser like Firefox or Chrome on a desktop or laptop. There is a good chance it will not work if you're using a mobile device. Please keep that in mind if you want to create a PDF copy.</p>
+<p><button onclick="q1();">Begin</button></p><div id="question1" class="question" style="display: none;"><b>We said in class that businesses get operating loans from which type of institution?</b><br><br>
+<textarea id="youranswer1" rows="3" cols="60"></textarea>
+<br><br>
+<div id="noanswer1" style="display: none;">Please enter your answer<br><br></div>
+<div id="correctanswer1" style="display: none;"><b>Answer:</b> Banks, or more generally, financial intermediaries
+<br><br></div>
+<button onclick="revealAnswer(1)">Reveal The Answer</button><br><br>
+</div>
+
+<div id="question2" class="question" style="display: none;"><b>In order for banks to be able to make more loans, they need to have an increase in their ____</b><br><br>
+<textarea id="youranswer2" rows="3" cols="60"></textarea>
+<br><br>
+<div id="noanswer2" style="display: none;">Please enter your answer<br><br></div>
+<div id="correctanswer2" style="display: none;"><b>Answer:</b> Deposits have to rise. Banks take deposits from savers and use that money to make loans to businesses at a slightly higher interest rate.
+<br><br></div>
+<button onclick="revealAnswer(2)">Reveal The Answer</button><br><br>
+</div>
+
+<div id="question3" class="question" style="display: none;"><b>If banks want to make more loans, what incentive can they give to savers to get them to save more?</b><br><br>
+<textarea id="youranswer3" rows="3" cols="60"></textarea>
+<br><br>
+<div id="noanswer3" style="display: none;">Please enter your answer<br><br></div>
+<div id="correctanswer3" style="display: none;"><b>Answer:</b> Pay a higher interest rate
+<br><br></div>
+<button onclick="revealAnswer(3)">Reveal The Answer</button><br><br>
+</div>
+
+<div id="question4" class="question" style="display: none;"><b>Suppose total savings in the economy is given by this function (in billions of dollars):<br><br>savings = 100 + 5i,<br><br>where i is the interest rate in percentage terms (for instance, i=5 means an interest rate of 5%, not 0.05). Calculate total savings for an interest rate of 2%, 8% and 20%. Does the change in savings as the interest rate changes make sense?</b><br><br>
+<textarea id="youranswer4" rows="3" cols="60"></textarea>
+<br><br>
+<div id="noanswer4" style="display: none;">Please enter your answer<br><br></div>
+<div id="correctanswer4" style="display: none;"><b>Answer:</b> At 2%: savings = 100 + 5(2) = $110 billion<br>At 8%: savings = 100 + 5(8) = $140 billion<br>At 20%: savings = 100 + 5(20) = $200 billion<br><br>As the interest rate rises, savings rises. That is what we expect to happen. A higher interest rate gives people an incentive to postpone their consumption in order to capitalize on the greater amount they'll be able to consume in the future.
+<br><br></div>
+<button onclick="revealAnswer(4)">Reveal The Answer</button><br><br>
+</div>
+
+<div id="question5" class="question" style="display: none;"><b>Suppose banks are initially making $120 billion of loans based on business demand for operating loans. What interest rate are they paying, given the information in the previous problem?</b><br><br>
+<textarea id="youranswer5" rows="3" cols="60"></textarea>
+<br><br>
+<div id="noanswer5" style="display: none;">Please enter your answer<br><br></div>
+<div id="correctanswer5" style="display: none;"><b>Answer:</b> In order to be making $120 billion of loans, banks need people to be saving $120 billion. Plugging into the equation, we have<br><br>120 = 100 + 5i<br><br>and solving for i, we find that the interest rate had to have been 4%.
+<br><br></div>
+<button onclick="revealAnswer(5)">Reveal The Answer</button><br><br>
+</div>
+
+<div id="question6" class="question" style="display: none;"><b>Businesses suddenly want to borrow more than before. They now want $160 billion of loans rather than the $120 billion from before. In order to accommodate this, what happens to the interest rate?</b><br><br>
+<textarea id="youranswer6" rows="3" cols="60"></textarea>
+<br><br>
+<div id="noanswer6" style="display: none;">Please enter your answer<br><br></div>
+<div id="correctanswer6" style="display: none;"><b>Answer:</b> We know the interest rate has to rise. In order to make more loans, banks will need more deposits, and the only way that happens is if the interest rate rises enough to make people save that additional amount. Going back to the equation, we have<br><br>160 = 100 + 5i<br><br>telling us that i has to rise from 4% to 12% if banks want to make the additional loans.
+<br><br></div>
+<button onclick="revealAnswer(6)">Reveal The Answer</button><br><br>
+</div>
+
+
+<div id="print" style="display: none;"><button id="print" onclick="window.print();">Save This Page As PDF</button><br><br>Clicking that button will bring up the print screen, but you can "print" to a PDF file, which means saving as a PDF on your hard drive.</div>
+<script>
+var questions = document.getElementsByClassName('question').length;
+
+function revealAnswer(id) {
+  if (document.getElementById('youranswer' + id).value.length > 0) {
+    document.getElementById('noanswer' + id).style = "display: none;";
+    document.getElementById('correctanswer' + id).style = "color: red;";
+    if (id < questions) {
+      document.getElementById('question' + (id+1)).style = "";
+    } else {
+      document.getElementById('print').style = "";
+    }
+  } else {
+    document.getElementById('noanswer' + id).style = "color: red;";
+    document.getElementById('correctanswer' + id).style = "display: none;";
+  }
+}
+
+function q1() {
+  document.getElementById('question1').style = "";
+}
+</script>

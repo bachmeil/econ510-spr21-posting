@@ -1,0 +1,82 @@
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-us" xml:lang="en-us">
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<title>March 9 - loans practice problems</title>
+<style>body { max-width: 850px; margin: auto; margin-top: 60px; font-family: Roboto, Trebuchet MS, Arial; margin-bottom: 100px; font-size: 1.2em; }
+textarea { font-family: Ubuntu Mono, Source Code Pro, mono; font-size: 1.2em; }
+</style>
+
+<h1>March 9 - loans practice problems</h1>
+
+<p><b>Important Note</b> You will be given a chance to save this page (with your answers and the correct answers) once you've finished. There will be a button that lets you print, which gives you the option to save as a PDF. That will work if you use a standard browser like Firefox or Chrome on a desktop or laptop. There is a good chance it will not work if you're using a mobile device. Please keep that in mind if you want to create a PDF copy.</p>
+<p><button onclick="q1();">Begin</button></p><div id="question1" class="question" style="display: none;"><b>The demand for business loans is given by 500 - 20i + 0.1Y. Explain the signs of the coefficients on the interest rate and GDP in terms of our discussion in class.</b><br><br>
+<textarea id="youranswer1" rows="3" cols="60"></textarea>
+<br><br>
+<div id="noanswer1" style="display: none;">Please enter your answer<br><br></div>
+<div id="correctanswer1" style="display: none;"><b>Answer:</b> The coefficient on the interest rate is negative, due to the fact that a higher interest rate means there are fewer profitable projects for firms, and therefore less desire to borrow. The positive coefficient on GDP is due to the higher investment that comes from higher sales.
+<br><br></div>
+<button onclick="revealAnswer(1)">Reveal The Answer</button><br><br>
+</div>
+
+<div id="question2" class="question" style="display: none;"><b>Suppose the interest rate is i=10 and GDP rises from 1000 to 1100. Do you expect the demand for business loans to rise or fall? Why? Use the discussion from class to guide your answer.</b><br><br>
+<textarea id="youranswer2" rows="3" cols="60"></textarea>
+<br><br>
+<div id="noanswer2" style="display: none;">Please enter your answer<br><br></div>
+<div id="correctanswer2" style="display: none;"><b>Answer:</b> Higher GDP will cause investment to rise. There will therefore be greater demand for business loans.
+<br><br></div>
+<button onclick="revealAnswer(2)">Reveal The Answer</button><br><br>
+</div>
+
+<div id="question3" class="question" style="display: none;"><b>Calculate the demand for loans as output rises for GDP=1000 and GDP=1100 if i=10.</b><br><br>
+<textarea id="youranswer3" rows="3" cols="60"></textarea>
+<br><br>
+<div id="noanswer3" style="display: none;">Please enter your answer<br><br></div>
+<div id="correctanswer3" style="display: none;"><b>Answer:</b> Demand is 500 - 20(10) + 0.1(1000) = 400 if GDP=1000.<br>It is 500 - 20(10) + 0.1(1100) = 410 if GDP=1100.
+<br><br></div>
+<button onclick="revealAnswer(3)">Reveal The Answer</button><br><br>
+</div>
+
+<div id="question4" class="question" style="display: none;"><b>Given the change in the demand for loans in the previous question, explain what happens to the interest rate when GDP rises from 1000 to 1100.</b><br><br>
+<textarea id="youranswer4" rows="3" cols="60"></textarea>
+<br><br>
+<div id="noanswer4" style="display: none;">Please enter your answer<br><br></div>
+<div id="correctanswer4" style="display: none;"><b>Answer:</b> There is a greater demand for loans so the interest rate will rise. That gives savers an incentive to save more, so there are more loans available.
+<br><br></div>
+<button onclick="revealAnswer(4)">Reveal The Answer</button><br><br>
+</div>
+
+<div id="question5" class="question" style="display: none;"><b>Based on your answer to the previous question, graph (on paper) the relationship between the interest rate and GDP in the money market. Describe your graph.</b><br><br>
+<textarea id="youranswer5" rows="3" cols="60"></textarea>
+<br><br>
+<div id="noanswer5" style="display: none;">Please enter your answer<br><br></div>
+<div id="correctanswer5" style="display: none;"><b>Answer:</b> This is the graph from class. It should be upward-sloping, with the interest rate on the y-axis and GDP on the x-axis.
+<br><br></div>
+<button onclick="revealAnswer(5)">Reveal The Answer</button><br><br>
+</div>
+
+
+<div id="print" style="display: none;"><button id="print" onclick="window.print();">Save This Page As PDF</button><br><br>Clicking that button will bring up the print screen, but you can "print" to a PDF file, which means saving as a PDF on your hard drive.</div>
+<script>
+var questions = document.getElementsByClassName('question').length;
+
+function revealAnswer(id) {
+  if (document.getElementById('youranswer' + id).value.length > 0) {
+    document.getElementById('noanswer' + id).style = "display: none;";
+    document.getElementById('correctanswer' + id).style = "color: red;";
+    if (id < questions) {
+      document.getElementById('question' + (id+1)).style = "";
+    } else {
+      document.getElementById('print').style = "";
+    }
+  } else {
+    document.getElementById('noanswer' + id).style = "color: red;";
+    document.getElementById('correctanswer' + id).style = "display: none;";
+  }
+}
+
+function q1() {
+  document.getElementById('question1').style = "";
+}
+</script>

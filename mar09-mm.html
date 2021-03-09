@@ -1,0 +1,93 @@
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-us" xml:lang="en-us">
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<title>March 9 - money market practice problems</title>
+<style>body { max-width: 850px; margin: auto; margin-top: 60px; font-family: Roboto, Trebuchet MS, Arial; margin-bottom: 100px; font-size: 1.2em; }
+textarea { font-family: Ubuntu Mono, Source Code Pro, mono; font-size: 1.2em; }
+</style>
+
+<h1>March 9 - money market practice problems</h1>
+
+<p><b>Important Note</b> You will be given a chance to save this page (with your answers and the correct answers) once you've finished. There will be a button that lets you print, which gives you the option to save as a PDF. That will work if you use a standard browser like Firefox or Chrome on a desktop or laptop. There is a good chance it will not work if you're using a mobile device. Please keep that in mind if you want to create a PDF copy.</p>
+<p><button onclick="q1();">Begin</button></p><div id="question1" class="question" style="display: none;"><b>Total savings in the economy (in billions) is given by 250 + 10i. If businesses want to borrow $350 billion to fund their investment, what does the interest rate have to be?</b><br><br>
+<textarea id="youranswer1" rows="3" cols="60"></textarea>
+<br><br>
+<div id="noanswer1" style="display: none;">Please enter your answer<br><br></div>
+<div id="correctanswer1" style="display: none;"><b>Answer:</b> Borrowing $350 billion requires savings of $350 billion. Solving
+<br><br>
+350 = 250 + 10i
+<br><br>
+for i, we get an interest rate of i=10. Note that i is the interest rate.
+<br><br></div>
+<button onclick="revealAnswer(1)">Reveal The Answer</button><br><br>
+</div>
+
+<div id="question2" class="question" style="display: none;"><b>Redo the above, but assuming businesses have decided to increase borrowing to $400 billion. What happens to the interest rate in general if businesses increase their demand for loans?</b><br><br>
+<textarea id="youranswer2" rows="3" cols="60"></textarea>
+<br><br>
+<div id="noanswer2" style="display: none;">Please enter your answer<br><br></div>
+<div id="correctanswer2" style="display: none;"><b>Answer:</b> Redoing the calculation with the new required savings amount:
+<br><br>
+400 = 250 + 10i
+<br><br>
+and solving for i, we get i=15. This is consistent with the general case where it's necessary to raise the interest rate in order to get people to save more.
+<br><br></div>
+<button onclick="revealAnswer(2)">Reveal The Answer</button><br><br>
+</div>
+
+<div id="question3" class="question" style="display: none;"><b>Assume the demand for business loans is 500 - 20i. What is the demand for business loans when i=10? When i=5?</b><br><br>
+<textarea id="youranswer3" rows="3" cols="60"></textarea>
+<br><br>
+<div id="noanswer3" style="display: none;">Please enter your answer<br><br></div>
+<div id="correctanswer3" style="display: none;"><b>Answer:</b> Plugging in those interest rates, we get
+<br><br>
+500 - 20(10) = 300<br>
+500 - 20(5) = 400
+<br><br></div>
+<button onclick="revealAnswer(3)">Reveal The Answer</button><br><br>
+</div>
+
+<div id="question4" class="question" style="display: none;"><b>Is the change in demand for business loans as the interest rate falls consistent with our discussion from class?</b><br><br>
+<textarea id="youranswer4" rows="3" cols="60"></textarea>
+<br><br>
+<div id="noanswer4" style="display: none;">Please enter your answer<br><br></div>
+<div id="correctanswer4" style="display: none;"><b>Answer:</b> Yes. A higher interest rate means there are fewer profitable projects to undertake, which in turn drives down the demand for loans. This is what the above calculations showed.
+<br><br></div>
+<button onclick="revealAnswer(4)">Reveal The Answer</button><br><br>
+</div>
+
+<div id="question5" class="question" style="display: none;"><b>In the above problems, we&apos;ve seen that an increase in the desire of businesses to borrow causes the interest rate to go up, while an increase in the interest rate causes the demand for loans to go down. Explain this "paradox".</b><br><br>
+<textarea id="youranswer5" rows="3" cols="60"></textarea>
+<br><br>
+<div id="noanswer5" style="display: none;">Please enter your answer<br><br></div>
+<div id="correctanswer5" style="display: none;"><b>Answer:</b> There is no paradox. Many students think there is a paradox, though, because they have difficulty keeping track of the ordering of events. In the first case there is an increase in the demand for loans that causes the interest rate to rise. In the second case there is an increase in the interest rate that causes the demand for loans to fall. The shocks and responses are different. In the first case, we're studying the effect of a change in the demand for loans. In the second case, the effect of a change in the interest rate.
+<br><br></div>
+<button onclick="revealAnswer(5)">Reveal The Answer</button><br><br>
+</div>
+
+
+<div id="print" style="display: none;"><button id="print" onclick="window.print();">Save This Page As PDF</button><br><br>Clicking that button will bring up the print screen, but you can "print" to a PDF file, which means saving as a PDF on your hard drive.</div>
+<script>
+var questions = document.getElementsByClassName('question').length;
+
+function revealAnswer(id) {
+  if (document.getElementById('youranswer' + id).value.length > 0) {
+    document.getElementById('noanswer' + id).style = "display: none;";
+    document.getElementById('correctanswer' + id).style = "color: red;";
+    if (id < questions) {
+      document.getElementById('question' + (id+1)).style = "";
+    } else {
+      document.getElementById('print').style = "";
+    }
+  } else {
+    document.getElementById('noanswer' + id).style = "color: red;";
+    document.getElementById('correctanswer' + id).style = "display: none;";
+  }
+}
+
+function q1() {
+  document.getElementById('question1').style = "";
+}
+</script>

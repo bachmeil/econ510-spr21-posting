@@ -1,0 +1,79 @@
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-us" xml:lang="en-us">
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<title>Balance of Payments</title>
+<style>body { max-width: 850px; margin: auto; margin-top: 60px; font-family: Roboto, Trebuchet MS, Arial; margin-bottom: 100px; font-size: 1.2em; }
+textarea { font-family: Ubuntu Mono, Source Code Pro, mono; font-size: 1.2em; }
+</style>
+
+<h1>Balance of Payments</h1>
+
+<p><b>Important Note</b> You will be given a chance to save this page (with your answers and the correct answers) once you've finished. There will be a button that lets you print, which gives you the option to save as a PDF. That will work if you use a standard browser like Firefox or Chrome on a desktop or laptop. There is a good chance it will not work if you're using a mobile device. Please keep that in mind if you want to create a PDF copy.</p>
+<p><button onclick="q1();">Begin</button></p><div id="question1" class="question" style="display: none;"><b>For the US in 2020, the US had (in billions of dollars) exports equal to 2,127 and imports equal to 2,808. <a href='https://www.census.gov/foreign-trade/statistics/historical/gands.pdf'>Source</a> Which corresponds to US outflows and which to US inflows? Did the US run a trade surplus or a trade deficit in 2020? What were net inflows due to trade in 2020 (provide the correct sign)? What were net outflows due to trade in 2020 (provide the correct sign)?</b><br><br>
+<textarea id="youranswer1" rows="3" cols="60"></textarea>
+<br><br>
+<div id="noanswer1" style="display: none;">Please enter your answer<br><br></div>
+<div id="correctanswer1" style="display: none;"><b>Answer:</b>  Exports are inflows to the US. Imports are outflows for the US. Exports were smaller than imports, so we ran a trade deficit. 2808 - 2127 = 681 billion trade deficit. That means trade caused a -681 billion net inflow or +681 billion net outflow. (A net inflow is the negative of a net outflow, all you're doing is flipping the sign.)
+<br><br></div>
+<button onclick="revealAnswer(1)">Reveal The Answer</button><br><br>
+</div>
+
+<div id="question2" class="question" style="display: none;"><b>US income from foreign investments (US-owned businesses in other countries) had income of $958 billion. Foreign income from US investments (foreign-owned businesses in the US) was $776 billion. Was this a net inflow or a net outflow for the US? In what amount?</b><br><br>
+<textarea id="youranswer2" rows="3" cols="60"></textarea>
+<br><br>
+<div id="noanswer2" style="display: none;">Please enter your answer<br><br></div>
+<div id="correctanswer2" style="display: none;"><b>Answer:</b> When US-owned businesses in other countries make a profit, that's an inflow for the US, since that's money coming back into the US. This would represent a net inflow for the US in the amount of 958 - 776 = $182 billion.
+<br><br></div>
+<button onclick="revealAnswer(2)">Reveal The Answer</button><br><br>
+</div>
+
+<div id="question3" class="question" style="display: none;"><b>If net transfers were $50 billion, calculate the current account balance, and be sure to state if it represents (a) a deficit or surplus, and (b) an inflow or outflow.</b><br><br>
+<textarea id="youranswer3" rows="3" cols="60"></textarea>
+<br><br>
+<div id="noanswer3" style="display: none;">Please enter your answer<br><br></div>
+<div id="correctanswer3" style="display: none;"><b>Answer:</b> The trade component was a $681 billion outflow for the US. Investment income was an inflow of $182 billion for the US. We know net transfers are an outflow for the US. We have:
+  <ul>
+<li>$681 billion outflow</li>
+<li>$182 billion inflow</li>
+<li>$50 billion outflow</li>
+<li>Total: $549 billion outflow due to the current account. This is a deficit.</li>
+</ul>
+<br><br></div>
+<button onclick="revealAnswer(3)">Reveal The Answer</button><br><br>
+</div>
+
+<div id="question4" class="question" style="display: none;"><b>Given the information above, what can you infer about the capital account? Do you expect that the US was borrowing from other countries/selling assets to other countries, or that the US was lending to other countries/buying assets from other countries? State the amount.</b><br><br>
+<textarea id="youranswer4" rows="3" cols="60"></textarea>
+<br><br>
+<div id="noanswer4" style="display: none;">Please enter your answer<br><br></div>
+<div id="correctanswer4" style="display: none;"><b>Answer:</b> If the US had a current account deficit of $549 billion, the US had a capital account surplus of $549 billion to pay for it. That is an inflow to the US. The US has to borrow from other countries and sell businesses to other countries in order to pay for the current account deficit.
+<br><br></div>
+<button onclick="revealAnswer(4)">Reveal The Answer</button><br><br>
+</div>
+
+
+<div id="print" style="display: none;"><button id="print" onclick="window.print();">Save This Page As PDF</button><br><br>Clicking that button will bring up the print screen, but you can "print" to a PDF file, which means saving as a PDF on your hard drive.</div>
+<script>
+var questions = document.getElementsByClassName('question').length;
+
+function revealAnswer(id) {
+  if (document.getElementById('youranswer' + id).value.length > 0) {
+    document.getElementById('noanswer' + id).style = "display: none;";
+    document.getElementById('correctanswer' + id).style = "color: red;";
+    if (id < questions) {
+      document.getElementById('question' + (id+1)).style = "";
+    } else {
+      document.getElementById('print').style = "";
+    }
+  } else {
+    document.getElementById('noanswer' + id).style = "color: red;";
+    document.getElementById('correctanswer' + id).style = "display: none;";
+  }
+}
+
+function q1() {
+  document.getElementById('question1').style = "";
+}
+</script>

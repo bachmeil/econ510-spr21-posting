@@ -1,0 +1,13 @@
+body { max-width: 850px; margin: auto; margin-top: 60px; font-family: Roboto, Trebuchet MS, Arial; margin-bottom: 100px; font-size: 1.2em; }
+.hy { background-color: yellow; }
+.hc { background-color: lightcyan; }
+.h { display: none; }
+pre { border: 1px solid green; border-radius: 6px; padding: 10px; }
+.hide { display: none; }
+button { font-size: 16px; background-color: inherit; border-radius: 4px; border: 1px solid silver; margin-left: 8px; }
+.flag { color: green; }
+.plus { display: none; }
+.content { font-size: 1.8em; }
+table { font-size: 1.4em; font-family: "Ubuntu Mono", "Source Code Pro", "Courier New"; }
+td, th { padding-right: 20px; text-align: left; }
+.standout { border: 2px solid purple; color: purple; background: lavenderblush; }

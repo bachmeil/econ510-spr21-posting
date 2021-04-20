@@ -1,0 +1,86 @@
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-us" xml:lang="en-us">
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<title>Phillips curve and Taylor rule</title>
+<style>body { max-width: 850px; margin: auto; margin-top: 60px; font-family: Roboto, Trebuchet MS, Arial; margin-bottom: 100px; font-size: 1.2em; }
+textarea { font-family: Ubuntu Mono, Source Code Pro, mono; font-size: 1.2em; }
+</style>
+
+<h1>Phillips curve and Taylor rule</h1>
+
+<p><b>Important Note</b> You will be given a chance to save this page (with your answers and the correct answers) once you've finished. There will be a button that lets you print, which gives you the option to save as a PDF. That will work if you use a standard browser like Firefox or Chrome on a desktop or laptop. There is a good chance it will not work if you're using a mobile device. Please keep that in mind if you want to create a PDF copy.</p>
+<p><button onclick="q1();">Begin</button></p><div id="question1" class="question" style="display: none;"><b><p>You're given the following Phillips curve:</p>
+<p>inf = 0.03 - 0.5u</p>
+<p>where inf is the inflation rate in one year and u is the unemployment rate. Note that the coefficient on u is negative. Does that make sense based on our discussion of the Phillips curve?</p></b><br><br>
+<textarea id="youranswer1" rows="3" cols="60"></textarea>
+<br><br>
+<div id="noanswer1" style="display: none;">Please enter your answer<br><br></div>
+<div id="correctanswer1" style="display: none;"><b>Answer:</b> We said that following a demand shock, a high unemployment rate means lower wage pressure and therefore lower inflation. Yes, the sign makes sense. A higher u means lower wage pressure and thus lower inflation.
+<br><br></div>
+<button onclick="revealAnswer(1)">Reveal The Answer</button><br><br>
+</div>
+
+<div id="question2" class="question" style="display: none;"><b>Make a forecast of inflation one year from now using the Phillips curve if the unemployment rate is 2%. Then 6%.</b><br><br>
+<textarea id="youranswer2" rows="3" cols="60"></textarea>
+<br><br>
+<div id="noanswer2" style="display: none;">Please enter your answer<br><br></div>
+<div id="correctanswer2" style="display: none;"><b>Answer:</b> Plugging into the Phillips curve, we have inf = 0.03 - 0.5(0.02) = 0.02 or 2% when the unemployment rate is 2%, and inf = 0.03 - 0.5(0.06) = 0.00 or 0% when the unemployment rate is 6%. Higher unemployment today implies lower future inflation if it's due to demand shocks.
+<br><br></div>
+<button onclick="revealAnswer(2)">Reveal The Answer</button><br><br>
+</div>
+
+<div id="question3" class="question" style="display: none;"><b>If the Federal Reserve wants 1% inflation in one year, what unemployment rate would it like to see?</b><br><br>
+<textarea id="youranswer3" rows="3" cols="60"></textarea>
+<br><br>
+<div id="noanswer3" style="display: none;">Please enter your answer<br><br></div>
+<div id="correctanswer3" style="display: none;"><b>Answer:</b> Using the equation above, we have 0.01 = 0.03 - 0.5u. That holds for u=4%.
+<br><br></div>
+<button onclick="revealAnswer(3)">Reveal The Answer</button><br><br>
+</div>
+
+<div id="question4" class="question" style="display: none;"><b>The Federal Reserve uses the Taylor rule <p>i = 0.04 + 0.5(Einf - Tinf) + 0.5(Tu - u).</p>
+<p>Rewatch the last video if you don't understand the notation. What will the interest be if the Fed targets a 6% unemployment rate and 2% inflation? Assume the current unemployment rate is 10% and expected inflation (based on the Phillips curve) is 1%.</p></b><br><br>
+<textarea id="youranswer4" rows="3" cols="60"></textarea>
+<br><br>
+<div id="noanswer4" style="display: none;">Please enter your answer<br><br></div>
+<div id="correctanswer4" style="display: none;"><b>Answer:</b> Plugging into the equation, we have
+<p>i = 0.04 + 0.5(0.01-0.02) + 0.5(0.06 - 0.10) = 0.04 + 0.5(-0.01) + 0.5(-0.04) = 0.015 or 1.5%.</p>
+<br><br></div>
+<button onclick="revealAnswer(4)">Reveal The Answer</button><br><br>
+</div>
+
+<div id="question5" class="question" style="display: none;"><b>Explain why it makes sense that both of the coefficients in that equation are positive. (They're 0.5 in this case, but that could change. It's the sign that matters.)</b><br><br>
+<textarea id="youranswer5" rows="3" cols="60"></textarea>
+<br><br>
+<div id="noanswer5" style="display: none;">Please enter your answer<br><br></div>
+<div id="correctanswer5" style="display: none;"><b>Answer:</b> If the first term is bigger, that means there's higher expected inflation. You need a higher interest rate in order to reduce inflation. If the second term is negative, that means you have a high unemployment rate, so you want to reduce the interest rate.
+<br><br></div>
+<button onclick="revealAnswer(5)">Reveal The Answer</button><br><br>
+</div>
+
+
+<div id="print" style="display: none;"><button id="print" onclick="window.print();">Save This Page As PDF</button><br><br>Clicking that button will bring up the print screen, but you can "print" to a PDF file, which means saving as a PDF on your hard drive.</div>
+<script>
+var questions = document.getElementsByClassName('question').length;
+
+function revealAnswer(id) {
+  if (document.getElementById('youranswer' + id).value.length > 0) {
+    document.getElementById('noanswer' + id).style = "display: none;";
+    document.getElementById('correctanswer' + id).style = "color: red;";
+    if (id < questions) {
+      document.getElementById('question' + (id+1)).style = "";
+    } else {
+      document.getElementById('print').style = "";
+    }
+  } else {
+    document.getElementById('noanswer' + id).style = "color: red;";
+    document.getElementById('correctanswer' + id).style = "display: none;";
+  }
+}
+
+function q1() {
+  document.getElementById('question1').style = "";
+}
+</script>

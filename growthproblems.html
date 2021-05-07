@@ -1,0 +1,114 @@
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-us" xml:lang="en-us">
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<title>Economic Growth</title>
+<style>body { max-width: 850px; margin: auto; margin-top: 60px; font-family: Roboto, Trebuchet MS, Arial; margin-bottom: 100px; font-size: 1.2em; }
+textarea { font-family: Ubuntu Mono, Source Code Pro, mono; font-size: 1.2em; }
+</style>
+
+<h1>Economic Growth</h1>
+
+<p><b>Important Note</b> You will be given a chance to save this page (with your answers and the correct answers) once you've finished. There will be a button that lets you print, which gives you the option to save as a PDF. That will work if you use a standard browser like Firefox or Chrome on a desktop or laptop. There is a good chance it will not work if you're using a mobile device. Please keep that in mind if you want to create a PDF copy.</p>
+<p><button onclick="q1();">Begin</button></p><div id="question1" class="question" style="display: none;"><b><p>These are some problems to drive home the fundamental concepts that underlie the economic growth material. I'm using the chicken example because it's easier for students to relate to than abstract concepts like national savings and depreciation at a national level.</p><p>After accounting for the cost of raising the chickens, the price of eggs, and wages, the amount of output (profit) per worker is given by $$y^{\prime} = 20 \sqrt{k^{\prime}}$$ where $k^{\prime}$ is the amount of capital per worker (in this case, the number of chickens per worker). Find the amount of output per worker for the following numbers of chickens per worker: 25, 100, and 400.</p></b><br><br>
+<textarea id="youranswer1" rows="3" cols="60"></textarea>
+<br><br>
+<div id="noanswer1" style="display: none;">Please enter your answer<br><br></div>
+<div id="correctanswer1" style="display: none;"><b>Answer:</b> Plug those numbers directly into the function: $$y^{\prime}(25) = 20 \sqrt{25} = 100$$ $$y^{\prime}(100) = 20 \sqrt{100} = 200$$ $$y^{\prime}(400) = 20 \sqrt{400} = 400$$
+<br><br></div>
+<button onclick="revealAnswer(1)">Reveal The Answer</button><br><br>
+</div>
+
+<div id="question2" class="question" style="display: none;"><b><p>Show how this production function has diminishing returns. You can use any points you want. You may need to reread the handout if you don't know how to do this.</p></b><br><br>
+<textarea id="youranswer2" rows="3" cols="60"></textarea>
+<br><br>
+<div id="noanswer2" style="display: none;">Please enter your answer<br><br></div>
+<div id="correctanswer2" style="display: none;"><b>Answer:</b> We'll choose some arbitrary points. At a small amount of capital (25 chickens per worker), output per worker is 100. When we add 25 more chickens per worker, output per worker rises to $20 \sqrt{50} \approx 141.4$, or an increase of 41.4. If we add an additional 25 chickens per worker, output per worker rises to $20 \sqrt{75} \approx 173.2$, or an increase of only 31.8. As you have more capital per worker, it gets harder and harder for them to use that capital for profit. In the case of chickens, the workers may eventually have to care for so many that they cannot feed them properly and they cannot properly bring all of the eggs to market.
+<br><br></div>
+<button onclick="revealAnswer(2)">Reveal The Answer</button><br><br>
+</div>
+
+<div id="question3" class="question" style="display: none;"><b>Assume chickens live for an average of five years. Therefore, the depreciation rate is 20%. Compute the number of chickens that depreciate each year for capital per worker of 25, 100, and 400. Then compute the dollar value of depreciation if it costs $2 to buy a new chicken.</b><br><br>
+<textarea id="youranswer3" rows="3" cols="60"></textarea>
+<br><br>
+<div id="noanswer3" style="display: none;">Please enter your answer<br><br></div>
+<div id="correctanswer3" style="display: none;"><b>Answer:</b> For $k^{\prime} = 25$, the yearly depreciation is 5 chickens per worker. Replacing them would cost \$10. For $k^{\prime} = 100$, the yearly depreciation is 20 chickens per worker. Replacing them would cost \$40. For $k^{\prime} = 400$, the yearly depreciation is 80 chickens per worker. Replacing them would cost \$160.
+<br><br></div>
+<button onclick="revealAnswer(3)">Reveal The Answer</button><br><br>
+</div>
+
+<div id="question4" class="question" style="display: none;"><b>Suppose the owner of a business that has capital per worker $k^{\prime} = 400$ has decided to retire, so as she winds down operations, she will not be making any new investment in the business. There will be no replacement of depreciated capital (chickens) this year. Calculate net savings (in dollar terms) for this year and the amount of capital per worker at the start of next year.</b><br><br>
+<textarea id="youranswer4" rows="3" cols="60"></textarea>
+<br><br>
+<div id="noanswer4" style="display: none;">Please enter your answer<br><br></div>
+<div id="correctanswer4" style="display: none;"><b>Answer:</b> There's no new investment, and using the information above, depreciation is 80 chickens per worker or \$160 per worker. Net savings is -$160 per worker. Capital per worker next year will be 320 chickens per worker.
+<br><br></div>
+<button onclick="revealAnswer(4)">Reveal The Answer</button><br><br>
+</div>
+
+<div id="question5" class="question" style="display: none;"><b>For a business with a savings rate of 20%, compute net savings and $k^{\prime}$ next year if it currently has 100 chickens per worker.</b><br><br>
+<textarea id="youranswer5" rows="3" cols="60"></textarea>
+<br><br>
+<div id="noanswer5" style="display: none;">Please enter your answer<br><br></div>
+<div id="correctanswer5" style="display: none;"><b>Answer:</b> Revenue with 100 chickens per worker was calculated above to be \$200 per worker. That means there will investment of \$40 per worker (20 new chickens purchased). There will be depreciation of 20 chickens per worker, with a $40 replacement cost. Net savings will be \$40 - \$40 = \$0. They will replace the chickens that die and nothing more. This is the steady state capital stock where the number of chickens per worker is neither growing or falling over time.
+<br><br></div>
+<button onclick="revealAnswer(5)">Reveal The Answer</button><br><br>
+</div>
+
+<div id="question6" class="question" style="display: none;"><b>A technological breakthrough brings to market "superchickens" that cost the same \$2 but produce twice as many eggs. The production function changes to $$y^{\prime} = 40 \sqrt{k^{\prime}}.$$ Show that the steady state capital per worker has increased to 400 chickens per worker.</b><br><br>
+<textarea id="youranswer6" rows="3" cols="60"></textarea>
+<br><br>
+<div id="noanswer6" style="display: none;">Please enter your answer<br><br></div>
+<div id="correctanswer6" style="display: none;"><b>Answer:</b> The steady state is where capital per worker is neither rising or falling. For low levels of $k^{\prime}$, the capital stock is rising. For high levels of $k^{\prime}$, the capital stock is falling. Output per worker at 400 chickens per worker is $$40 \sqrt{400} = 800.$$ Investment is \$160 per worker. Depreciation is 80 chickens per worker or \$160 per worker. Net savings is \$160 - \$160 = \$0 per worker. Therefore $k^{\prime}$ is neither growing or falling, and the steady state capital per worker has increased from 100 to 400 due to improved technology.
+<br><br></div>
+<button onclick="revealAnswer(6)">Reveal The Answer</button><br><br>
+</div>
+
+<div id="question7" class="question" style="display: none;"><b>Show that after the new production function kicks in, a company previously at 100 chickens per worker would have a growing number of chickens per worker.</b><br><br>
+<textarea id="youranswer7" rows="3" cols="60"></textarea>
+<br><br>
+<div id="noanswer7" style="display: none;">Please enter your answer<br><br></div>
+<div id="correctanswer7" style="display: none;"><b>Answer:</b> With the new production function, revenue per worker would climb to $$40 \sqrt{100} = 400.$$ Savings would be \$80 per worker. Depreciation would be 20 chickens per worker or \$40 per worker. Net savings is \$80 - \$40 = \$40 per worker. Capital per worker is growing by 20 chickens per year. Next year, the company would have 120 chickens per worker. That growth would continue until they reach the new steady state of 400 chickens per worker.
+<br><br></div>
+<button onclick="revealAnswer(7)">Reveal The Answer</button><br><br>
+</div>
+
+
+<div id="print" style="display: none;"><button id="print" onclick="window.print();">Save This Page As PDF</button><br><br>Clicking that button will bring up the print screen, but you can "print" to a PDF file, which means saving as a PDF on your hard drive.</div>
+<script>
+var questions = document.getElementsByClassName('question').length;
+
+function revealAnswer(id) {
+  if (document.getElementById('youranswer' + id).value.length > 0) {
+    document.getElementById('noanswer' + id).style = "display: none;";
+    document.getElementById('correctanswer' + id).style = "color: red;";
+    if (id < questions) {
+      document.getElementById('question' + (id+1)).style = "";
+    } else {
+      document.getElementById('print').style = "";
+    }
+  } else {
+    document.getElementById('noanswer' + id).style = "color: red;";
+    document.getElementById('correctanswer' + id).style = "display: none;";
+  }
+}
+
+function q1() {
+  document.getElementById('question1').style = "";
+}
+</script>
+
+<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+</script>
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+</script>
